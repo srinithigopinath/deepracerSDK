@@ -55,22 +55,16 @@ deep_racer.set_led_color(255, 0, 0)
 
 This step allows you to change your LED lights. Before being able to change your lights, you must call the `set_callibration_mode` method. Then, enter the parameters for the color you desire. Parameters can be between 0-255 and represent the values for red, green, and blue. 
 
-#### Setting the Drive Mode 
+#### Setting the Drive Mode and driving forward
 
 ```
  drive_status = deep_racer.set_drive_mode_to_manual()
  start_status = deep_racer.start()
- let_us_drive = deepracer.manual_drive_forward(0, 1, 1) 
-```
-
-These methods mimick the order in which the DeepRacer APIs are called. To use the driving methods, you must first set the drive mode to manual. Then, you must call the start method. To drive forward, you can call the `manual_drive_forward` method and enter parameter values between 0 and 1. These values represent the angle, max speed, and throttle. 
-
-##### Reversing the Drive mode 
+ let_us_drive = deepracer.manual_drive(0, 1, -1) 
 
 ```
- let_us_drive = deepracer.manual_drive_reverse(0, 1, 1) 
-```
-After setting the drive mode to manual and calling the start method, you can make the Deep Racer move in reverse using this method. Similarily, the parameters are between 0-1 and represent angle, max speed, and throttle. 
+
+These methods mimick the order in which the DeepRacer APIs are called. To use the driving methods, you must first set the drive mode to manual. Then, you must call the start method followed by the manual_drive method. These parameters represent the angle, max speed, and throttle. To drive forward use negative throttle value from 0 to -1, where -1 is the full speed. To drive in reverse use 0 to 1 where 1 is the full speed.  
 
 #### Stopping the Deep Racer 
 
