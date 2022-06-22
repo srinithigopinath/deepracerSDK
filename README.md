@@ -83,4 +83,4 @@ To stop the DeepRacer, call the stop method.
 
 
 ### TESTS 
-#### Please see the test files for usage examples in more detail,Replace the IP-ADDRESS and Password with your own 
+#### Please see the test files for usage examples in more detail. Replace the IP-ADDRESS and Password with your own 
