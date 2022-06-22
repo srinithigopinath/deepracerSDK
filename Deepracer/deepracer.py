@@ -2,6 +2,7 @@ import json
 from requests_html import HTMLSession
 from urllib3.exceptions import InsecureRequestWarning
 import urllib3
+import random
 
 urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -162,24 +163,3 @@ class Deepracer:
 
     def get_mjpeg_stream_url(self, width=480, height=360):
         return f'{self.__mjpeg_stream_url}&width={width}&height={height}'
-
-    # def get_camera_image(self, width=480, height=360):
-    #     ssl_context = ssl.create_default_context()
-    #     ssl_context.check_hostname = False
-    #     ssl_context.verify_mode = ssl.CERT_NONE
-    #     request = Request(self.get_mjpeg_stream_url(width, height))
-    #     headers = self.__make_header()
-    #     for name in headers:
-    #         request.add_header(name, headers[name])
-    #     stream = urlopen(request, context=ssl_context)
-    #     _bytes = bytes()
-    #     while True:
-    #         _bytes += stream.read(1024)
-    #         a = _bytes.find(b'\xff\xd8')
-    #         b = _bytes.find(b'\xff\xd9')
-    #         if a != -1 and b != -1:
-    #             jpg = _bytes[a:b + 2]
-    #             _bytes = _bytes[b + 2:]
-    #             img = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8), cv2.IMREAD_COLOR)
-    #             break
-    #     return img
