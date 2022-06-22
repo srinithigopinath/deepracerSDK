@@ -80,3 +80,7 @@ After setting the drive mode to manual and calling the start method, you can mak
 ```
 
 To stop the DeepRacer, call the stop method. 
+
+
+### TESTS 
+#### Please see the test files for usage examples in more detail,Replace the IP-ADDRESS and Password with your own 
